@@ -1,0 +1,21 @@
+<app-header title="Chats"></app-header>
+
+<div class="conversations-container">
+  <ng-container *ngIf="conversations; else loadingTemplate">
+    <ng-container *ngFor="let conversation of conversations">
+      <app-chat-row [conversation]="conversation"></app-chat-row>
+    </ng-container>
+  </ng-container>
+</div>
+
+<app-footer></app-footer>
+
+<ng-template #loadingTemplate>
+  <div class="loader">
+    <div class="lds-ripple">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <small>Loading...</small>
+</ng-template>

@@ -7,7 +7,11 @@ import { LoginPageComponent } from './pages/login-page/login-page.component'
 import { HeaderComponent } from './header/header.component'
 import { FooterComponent } from './footer/footer.component'
 import { HomeComponent } from './pages/home/home.component'
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ChatPageComponent } from './pages/chat-page/chat-page.component';
+import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
+import { ChatRowComponent } from './chat-row/chat-row.component';
+import { MessagingPageComponent } from './pages/messaging-page/messaging-page.component'
 
 @NgModule({
     declarations: [
@@ -16,6 +20,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
         HeaderComponent,
         FooterComponent,
         HomeComponent,
+        ChatPageComponent,
+        SettingsPageComponent,
+        ChatRowComponent,
+        MessagingPageComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
     providers: [],

@@ -1,0 +1,14 @@
+<div class="conversation" [routerLink]="'/chat/1'">
+  <img class="conversation__avatar" src="{{ conversation.image_url }}" />
+  <div class="conversation__data">
+    <span class="conversation__username">{{
+      conversation.participants[0].name
+    }}</span>
+    <span class="conversation__message">
+      {{ conversation.messages[conversation.messages.length - 1].text }}
+    </span>
+    <span class="conversation__timestamp">
+      {{ conversation.messages[conversation.messages.length - 1].timestamp }}
+    </span>
+  </div>
+</div>
