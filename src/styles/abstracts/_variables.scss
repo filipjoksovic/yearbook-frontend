@@ -1,7 +1,19 @@
-$primary-color: #f1bb87;
-$secondary-bg: #d2a478;
+//color scheme
+$primary-bg: #7871aa;
+$secondary-bg: #4e5283;
+$accent: #d9bbf9;
+
+$danger: #d9bbf9;
+$default: #01baef;
+$warning-dark: #e6af2e;
+$success: #63a375;
+
+$primary-color: $primary-bg;
+$secondary-bg: $secondary-bg;
 
 $text-color: #242423;
+
+$text-color: #e2e2e2;
 
 $border-radius: 1rem;
 

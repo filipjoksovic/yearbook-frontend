@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Conversation } from 'src/app/conversation';
 import { ConversationService } from 'src/app/services/conversation.service';
+import { TitleService } from 'src/app/services/title.service';
 import { User } from 'src/app/user';
 
 @Component({
@@ -10,7 +11,10 @@ import { User } from 'src/app/user';
   styleUrls: ['./chat-page.component.scss'],
 })
 export class ChatPageComponent implements OnInit {
-  constructor(private conversationService: ConversationService) {}
+  constructor(
+    private conversationService: ConversationService,
+    private titleService: TitleService
+  ) {}
 
   private _conversations: Conversation[];
 
@@ -31,6 +35,10 @@ export class ChatPageComponent implements OnInit {
     this.conversationService.getConversations(1).subscribe((conversations) => {
       console.log(conversations);
       this._conversations = conversations;
+      this.titleService.setTitle('Chat');
     });
+  }
+  ngOnDestroy(): void {
+    this.titleService.setTitle('Yearbook');
   }
 }

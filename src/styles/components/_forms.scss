@@ -87,6 +87,7 @@
   transition: border-radius 250ms ease-in-out;
   font-size: $input-fs;
   height: $input-height;
+  color: #242423;
 
   &:focus {
     border-radius: $input-br * 2;

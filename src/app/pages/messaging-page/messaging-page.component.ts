@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Conversation } from 'src/app/conversation';
 import { Message } from 'src/app/message';
 import { MessageService } from 'src/app/services/message.service';
+import { TitleService } from 'src/app/services/title.service';
 import { User } from 'src/app/user';
 
 @Component({
@@ -14,7 +15,10 @@ export class MessagingPageComponent implements OnInit {
   public user: User;
   public messages: Message[];
 
-  constructor(private messageService: MessageService) {}
+  constructor(
+    private messageService: MessageService,
+    private titleService: TitleService
+  ) {}
 
   ngOnInit(): void {
     this.messageService.getMessages(1).subscribe((messages) => {
@@ -22,6 +26,10 @@ export class MessagingPageComponent implements OnInit {
       console.log(this.conversation);
 
       this.user = this.conversation.participants[0];
+      this.titleService.setUser(this.user);
     });
+  }
+  ngOnDestroy(): void {
+    this.titleService.setUser(null);
   }
 }
