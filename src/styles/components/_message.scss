@@ -1,0 +1,58 @@
+.conversation-container {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.message {
+  background-color: $default;
+  color: white;
+  max-width: 70%;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  word-wrap: break-word;
+  &.sent {
+    margin-left: auto;
+    justify-content: end;
+    text-align: end;
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 90%;
+    //   left: 90%;
+    //   margin-left: -10px;
+    //   border-width: 10px;
+    //   border-style: solid;
+    //   border-color: $default $default transparent transparent;
+    // }
+  }
+
+  &.received {
+    margin-right: auto;
+    justify-content: start;
+    text-align: start;
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 90%;
+    //   left: 10%;
+    //   margin-left: -10px;
+    //   border-width: 10px;
+    //   border-style: solid;
+    //   border-color: $default transparent transparent $default;
+    // }
+  }
+
+  &__text {
+    font-size: $message-fs;
+  }
+  &__timestamp {
+    font-size: $timestamp-fs;
+    color: $timestamp-color;
+  }
+}

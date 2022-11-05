@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Conversation } from 'src/app/conversation';
 import { Message } from 'src/app/message';
 import { MessageService } from 'src/app/services/message.service';
@@ -14,6 +14,7 @@ export class MessagingPageComponent implements OnInit {
   public conversation: Conversation;
   public user: User;
   public messages: Message[];
+  @ViewChild('messageInput') messageInput: ElementRef;
 
   constructor(
     private messageService: MessageService,
@@ -24,6 +25,7 @@ export class MessagingPageComponent implements OnInit {
     this.messageService.getMessages(1).subscribe((messages) => {
       this.conversation = messages;
       console.log(this.conversation);
+      this.messages = messages.messages;
 
       this.user = this.conversation.participants[0];
       this.titleService.setUser(this.user);
@@ -31,5 +33,16 @@ export class MessagingPageComponent implements OnInit {
   }
   ngOnDestroy(): void {
     this.titleService.setUser(null);
+  }
+  public sendMessage() {
+    const message: Message = new Message({
+      id: this.messages.length + 1,
+      text: this.messageInput.nativeElement.value,
+      timestamp: '2020-10-10',
+      sender_id: 1,
+    });
+    console.log(message);
+    this.messages.push(message);
+    this.messageInput.nativeElement.value = '';
   }
 }

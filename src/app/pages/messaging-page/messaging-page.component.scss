@@ -1,0 +1,9 @@
+:host {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  overflow-y: scroll;
+}
