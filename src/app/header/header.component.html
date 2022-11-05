@@ -1,21 +1,23 @@
-<ng-container *ngIf="!user; else userHeaderTemplate">
-  <div class="header-wrapper">
-    <header class="header">
-      <h1 class="app-title">{{ title }}</h1>
-    </header>
-  </div>
-</ng-container>
+<ng-container *ngIf="showHeader">
+  <ng-container *ngIf="!user; else userHeaderTemplate">
+    <div class="header-wrapper">
+      <header class="header">
+        <h1 class="app-title">{{ title }}</h1>
+      </header>
+    </div>
+  </ng-container>
 
-<ng-template #userHeaderTemplate>
-  <div class="header-wrapper header-wrapper__user">
-    <header class="header header__user">
-      <img class="header__user__avatar" src="{{ user.image_url }}" />
-      <div class="header__user__data">
-        <span class="header__user__username">{{ user.name }}</span>
-        <span (click)="expandHeader()" class="header__user__three-dots"
-          ><fa-icon [icon]="faEllipsisVertical"></fa-icon
-        ></span>
-      </div>
-    </header>
-  </div>
-</ng-template>
+  <ng-template #userHeaderTemplate>
+    <div class="header-wrapper header-wrapper__user">
+      <header class="header header__user">
+        <img class="header__user__avatar" src="{{ user.image_url }}" />
+        <div class="header__user__data">
+          <span class="header__user__username">{{ user.name }}</span>
+          <span (click)="expandHeader()" class="header__user__three-dots"
+            ><fa-icon [icon]="faEllipsisVertical"></fa-icon
+          ></span>
+        </div>
+      </header>
+    </div>
+  </ng-template>
+</ng-container>

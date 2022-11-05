@@ -1,13 +1,13 @@
-import { Component } from '@angular/core'
-import { Router } from '@angular/router'
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    title = 'yearbook'
-    public isAuthPage: boolean = false
-    constructor(private router: Router) {}
+  title = 'yearbook';
+  public isAuthPage: boolean = false;
+  constructor(private router: Router) {}
 }

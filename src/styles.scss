@@ -29,9 +29,6 @@ body {
   justify-content: space-between;
   flex-direction: column;
   background-color: $secondary-bg;
-  &:has(app-login-page) {
-    background-color: $primary-color;
-  }
 }
 
 .form-wrapper {
@@ -41,6 +38,7 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
+  background-color: $primary-color;
 
   & .no-account {
     font-weight: 500;
