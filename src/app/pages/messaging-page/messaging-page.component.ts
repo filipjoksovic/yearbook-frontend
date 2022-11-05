@@ -4,7 +4,8 @@ import { Message } from 'src/app/message';
 import { MessageService } from 'src/app/services/message.service';
 import { TitleService } from 'src/app/services/title.service';
 import { User } from 'src/app/user';
-
+import { ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-messaging-page',
   templateUrl: './messaging-page.component.html',
@@ -14,7 +15,9 @@ export class MessagingPageComponent implements OnInit {
   public conversation: Conversation;
   public user: User;
   public messages: Message[];
+
   @ViewChild('messageInput') messageInput: ElementRef;
+  @ViewChild('container') container: ElementRef;
 
   constructor(
     private messageService: MessageService,
@@ -34,6 +37,9 @@ export class MessagingPageComponent implements OnInit {
   ngOnDestroy(): void {
     this.titleService.setUser(null);
   }
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
   public sendMessage() {
     const message: Message = new Message({
       id: this.messages.length + 1,
@@ -44,5 +50,10 @@ export class MessagingPageComponent implements OnInit {
     console.log(message);
     this.messages.push(message);
     this.messageInput.nativeElement.value = '';
+  }
+
+  public scrollToBottom() {
+    this.container.nativeElement.scrollTop =
+      this.container.nativeElement.scrollHeight;
   }
 }
