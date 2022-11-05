@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 
 @Component({
     selector: 'app-login-page',
@@ -6,9 +7,13 @@ import { Component, OnInit } from '@angular/core'
     styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent implements OnInit {
-    constructor() {}
+    constructor(private routerService: Router) {}
 
     ngOnInit(): void {}
+
+    public login() {
+        this.routerService.navigate(['home'])
+    }
 
     public toggleActive() {
         console.log('Clicked')
