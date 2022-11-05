@@ -1,0 +1,17 @@
+.btn {
+  background-color: $primary-color;
+  outline: none;
+  border: none;
+  padding: $btn-padding;
+  font-weight: $btn-fw;
+  font-size: $btn-font-size;
+  border-radius: $btn-br;
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  transition: width 250ms ease-in-out;
+  cursor: pointer;
+  &:hover {
+    width: 100%;
+  }
+}

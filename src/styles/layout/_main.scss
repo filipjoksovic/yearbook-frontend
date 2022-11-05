@@ -1,0 +1,12 @@
+@import 'footer';
+@import 'header';
+@import 'navigation';
+
+#page-wrapper {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: $secondary-bg;
+}

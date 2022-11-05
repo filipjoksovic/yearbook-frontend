@@ -1,0 +1,37 @@
+.conversations-container {
+  @include flex(initial, center, column);
+  //TODO replace with header and footer height variables
+  height: calc(100vh - $header-height - $footer-height - 2rem);
+  padding: 1rem;
+  &:has(.loader) {
+    justify-content: center;
+  }
+}
+
+.conversation {
+  cursor: pointer;
+  @include flex(flex-start, center, initial, 1rem);
+  width: 100%;
+  background-color: $primary-color;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: $input-box-shadow;
+  &__avatar {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 10rem;
+  }
+  &__data {
+    @include flex(initial, initial, column);
+    width: 100%;
+  }
+  &__username {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  &__timestamp {
+    text-align: end;
+    font-size: small;
+    color: $secondary-bg;
+  }
+}

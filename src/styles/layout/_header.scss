@@ -1,0 +1,44 @@
+.header-wrapper {
+  @include flex(center);
+  width: 100%;
+  & .header {
+    width: 95%;
+    background-color: $primary-color;
+    position: static;
+    border-radius: 1rem;
+    filter: drop-shadow(0px -2px 10px rgba(0, 0, 0, 0.1));
+    @include flex(initial, center);
+    padding: 1rem;
+    height: $header-height;
+    margin-top: 0.5rem;
+    & .app-title {
+      font-size: $header-title-fs;
+    }
+
+    &__user {
+      transition: height 250ms ease-in-out;
+      &.active {
+        height: 15vh;
+      }
+      &__data {
+        flex-grow: 1;
+        @include flex(space-between, center);
+        padding-right: 1rem;
+      }
+      align-items: center;
+      gap: 1.5rem;
+      &__avatar {
+        height: 100%;
+        border-radius: 1rem;
+      }
+      &__username {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      &__three-dots {
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

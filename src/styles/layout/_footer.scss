@@ -1,0 +1,14 @@
+.footer-wrapper {
+  @include flex(center);
+  width: 100%;
+  .footer {
+    width: 95%;
+    background-color: $primary-color;
+    height: $footer-height;
+    position: absolute;
+    bottom: 0;
+    border-radius: $footer-br;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0px -2px 10px rgba(0, 0, 0, 0.1));
+  }
+}
