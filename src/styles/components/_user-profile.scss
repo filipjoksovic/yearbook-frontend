@@ -1,0 +1,115 @@
+.user-profile {
+  height: 78%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: $text-color;
+  border-radius: 1rem;
+  position: relative;
+
+  &__container {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-grow: 1;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $primary-bg;
+    padding: $padding;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+  }
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    flex: 8;
+    border-radius: $border-radius;
+    &:hover {
+      & .user-profile__show-bio {
+        opacity: 0.1;
+      }
+    }
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: $border-radius;
+    }
+  }
+  &__data {
+    @include flex(initial, initial, column);
+    flex: 2;
+  }
+  &__username {
+    font-size: 1.5rem;
+    margin-bottom: $margin;
+    background-color: $secondary-bg;
+    padding: $padding / 2;
+    border-radius: $border-radius * 1;
+  }
+  &__misc-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: $secondary-bg;
+    padding: 0.5rem $padding;
+    border-radius: $border-radius;
+  }
+  &__bio {
+    display: none;
+    position: relative;
+    // color: #203203;
+    &__title {
+      background-color: $secondary-bg;
+      padding: 0.5rem $border-radius * 2;
+      border-radius: $border-radius;
+      position: sticky;
+      top: 0%;
+      margin: $padding;
+    }
+    &__text {
+      background-color: $secondary-bg;
+      margin-top: $margin;
+      padding: $padding;
+      border-radius: $border-radius;
+      text-overflow: ellipsis;
+      margin: $padding;
+    }
+
+    &.active {
+      display: unset;
+      position: absolute;
+      top: 0;
+      background-color: $primary-bg;
+      width: 100%;
+      height: 100%;
+      border-radius: $border-radius;
+      // padding: $padding;
+      // margin: $padding;
+      box-shadow: $box-shadow;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+  &__actions {
+    @include flex(initial, flex-end, initial, 1.5rem);
+  }
+  &__show-bio {
+    position: absolute;
+    bottom: $padding;
+    right: $padding;
+    transition: 250ms opacity ease-in-out;
+    opacity: 1;
+
+    &:hover {
+      opacity: 1 !important;
+    }
+  }
+}

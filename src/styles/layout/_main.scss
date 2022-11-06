@@ -10,3 +10,15 @@
   flex-direction: column;
   background-color: $secondary-bg;
 }
+.page-container {
+  height: 80vh;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  transition: height 250ms ease-in-out;
+}
+body:has(.header-wrapper__user.active) {
+  & .page-container {
+    height: 80vh - $user-header-active + $header-height;
+  }
+}

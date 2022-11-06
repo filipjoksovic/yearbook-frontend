@@ -11,7 +11,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
 import { ChatRowComponent } from './chat-row/chat-row.component';
-import { MessagingPageComponent } from './pages/messaging-page/messaging-page.component'
+import { MessagingPageComponent } from './pages/messaging-page/messaging-page.component';
+import { UserProfileComponent } from './user-profile/user-profile.component'
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { MessagingPageComponent } from './pages/messaging-page/messaging-page.co
         SettingsPageComponent,
         ChatRowComponent,
         MessagingPageComponent,
+        UserProfileComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
     providers: [],

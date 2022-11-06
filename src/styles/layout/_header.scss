@@ -18,7 +18,7 @@
     &__user {
       transition: height 250ms ease-in-out;
       &.active {
-        height: 15vh;
+        height: $user-header-active;
       }
       &__data {
         flex-grow: 1;

@@ -1,23 +1,25 @@
-<div class="conversation-container" #container>
-  <ng-container *ngFor="let message of messages">
-    <div
-      class="message"
-      [ngClass]="{
-        sent: message.sender_id === '1',
-        received: message.sender_id !== '1'
-      }"
-    >
-      <span class="message__text">
-        {{ message.text }}
-      </span>
-      <span class="message__timestamp"> {{ message.timestamp }} </span>
-    </div>
-  </ng-container>
+<div class="page-container">
+  <div class="conversation-container" #container>
+    <ng-container *ngFor="let message of messages">
+      <div
+        class="message"
+        [ngClass]="{
+          sent: message.sender_id === '1',
+          received: message.sender_id !== '1'
+        }"
+      >
+        <span class="message__text">
+          {{ message.text }}
+        </span>
+        <span class="message__timestamp"> {{ message.timestamp }} </span>
+      </div>
+    </ng-container>
+  </div>
+  <input
+    #messageInput
+    type="text"
+    class="form-control"
+    placeholder="Type something..."
+    (keyup.enter)="sendMessage()"
+  />
 </div>
-<input
-  #messageInput
-  type="text"
-  class="form-control"
-  placeholder="Type something..."
-  (keyup.enter)="sendMessage()"
-/>

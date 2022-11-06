@@ -6,12 +6,33 @@
   font-weight: $btn-fw;
   font-size: $btn-font-size;
   border-radius: $btn-br;
-  display: block;
-  margin: 0 auto;
-  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $btn-bs;
   transition: width 250ms ease-in-out;
   cursor: pointer;
+  transition: filter 250ms ease-in-out;
+
   &:hover {
-    width: 100%;
+    filter: brightness(120%);
+  }
+
+  &__success {
+    color: white;
+    background-color: $success;
+  }
+  &__danger {
+    color: white;
+    background-color: $danger;
+  }
+  &__action {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+  }
+  &__warning {
+    background-color: $warning-dark;
   }
 }
