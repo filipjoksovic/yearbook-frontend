@@ -2,7 +2,7 @@
   <img class="conversation__avatar" src="{{ conversation.image_url }}" />
   <div class="conversation__data">
     <span class="conversation__username">{{
-      conversation.participants[0].name
+      conversation.participants[0].first_name
     }}</span>
     <span class="conversation__message">
       {{ conversation.messages[conversation.messages.length - 1].text }}

@@ -15,7 +15,9 @@
       <header class="header header__user">
         <img class="header__user__avatar" src="{{ user.image_url }}" />
         <div class="header__user__data">
-          <span class="header__user__username">{{ user.name }}</span>
+          <span class="header__user__username"
+            >{{ user.first_name }} {{ user.last_name }}</span
+          >
           <span class="header__user__three-dots"
             ><fa-icon [icon]="faEllipsisVertical"></fa-icon
           ></span>

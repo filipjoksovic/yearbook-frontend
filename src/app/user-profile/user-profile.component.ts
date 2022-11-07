@@ -1,19 +1,25 @@
+import { ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import {
   Component,
   ElementRef,
   OnInit,
   ViewChild,
   AfterViewInit,
+  Input,
 } from '@angular/core';
 import { faHandshake } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
+import { BehaviorSubject } from 'rxjs';
+import { UserService } from '../services/user.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserProfileComponent implements OnInit {
   faHandshake = faHandshake;
@@ -24,10 +30,28 @@ export class UserProfileComponent implements OnInit {
   @ViewChild('bio') bio: ElementRef;
   @ViewChild('bioTitle') bioTitle: ElementRef;
 
-  constructor() {}
+  public user: User;
 
-  ngOnInit(): void {}
+  constructor(
+    private userService: UserService,
+    private cd: ChangeDetectorRef
+  ) {}
 
+  ngOnInit(): void {
+    this.userService.user$.subscribe((user) => {
+      console.log('User profile component got user', user);
+      this.user = user;
+      this.cd.detectChanges();
+    });
+
+    this.userService.getRandomUser().subscribe((user) => {
+      this.user = user;
+      this.cd.detectChanges();
+    });
+  }
+  ngOnDestroy(): void {
+    this.userService.user$.unsubscribe();
+  }
   public showBio() {
     this.bio.nativeElement.classList.add('active');
 
@@ -47,6 +71,10 @@ export class UserProfileComponent implements OnInit {
       'animate__slideOutDown'
     );
   }
-  public match() {}
-  public nextUser() {}
+  public match() {
+    this.userService.matchWithUser(this.user);
+  }
+  public skip() {
+    this.userService.skipUser(this.user);
+  }
 }

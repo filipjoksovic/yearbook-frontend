@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User } from '../user';
+import { User } from '../../user';
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
-import { TitleService } from '../services/title.service';
+import { TitleService } from '../../services/title.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

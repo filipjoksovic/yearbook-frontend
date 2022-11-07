@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Conversation } from '../conversation';
+import { Conversation } from '../../conversation';
 
 @Component({
   selector: 'app-chat-row',
