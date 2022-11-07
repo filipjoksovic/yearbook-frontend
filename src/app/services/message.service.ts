@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import * as moment from 'moment';
+import { Observable, of, tap } from 'rxjs';
 import { Conversation } from '../conversation';
 import { Message } from '../message';
 import { User } from '../user';
@@ -64,6 +65,14 @@ export class MessageService {
   constructor() {}
 
   public getMessages(id: number): Observable<Conversation> {
-    return of(conversations[0]);
+    //TODO http get logic
+
+    return of(conversations[0]).pipe(
+      tap((data) => {
+        data.messages.forEach((element) => {
+          element.timestamp = moment().format('DD-MM-YYYY HH:mm');
+        });
+      })
+    );
   }
 }

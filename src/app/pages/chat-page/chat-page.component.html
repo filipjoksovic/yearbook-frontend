@@ -1,4 +1,4 @@
-<div class="conversations-container">
+<div class="conversations-container animate__animated animate__fadeInUp">
   <ng-container *ngIf="conversations; else loadingTemplate">
     <ng-container *ngFor="let conversation of conversations">
       <app-chat-row [conversation]="conversation"></app-chat-row>

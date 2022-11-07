@@ -74,11 +74,12 @@
 
   & label {
     font-size: $label-fs;
+    color: $label-color;
   }
 }
 .form-control {
   outline: none;
-  padding: $input-padding * 2 $input-padding * 2;
+  padding: $input-padding;
   width: 100%;
   border: $input-border;
   border-radius: $input-br;
@@ -86,7 +87,6 @@
   box-shadow: $input-box-shadow;
   transition: border-radius 250ms ease-in-out;
   font-size: $input-fs;
-  height: $input-height;
   color: #242423;
 
   &:focus {

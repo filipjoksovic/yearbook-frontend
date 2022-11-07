@@ -70,6 +70,13 @@
       position: sticky;
       top: 0%;
       margin: $padding;
+      display: flex;
+      // width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      & span {
+        font-size: 2rem;
+      }
     }
     &__text {
       background-color: $secondary-bg;
@@ -99,7 +106,8 @@
     }
   }
   &__actions {
-    @include flex(initial, flex-end, initial, 1.5rem);
+    @include flex(center, center, initial, 1.5rem);
+    flex-wrap: wrap;
   }
   &__show-bio {
     position: absolute;

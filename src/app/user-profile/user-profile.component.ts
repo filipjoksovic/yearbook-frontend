@@ -30,13 +30,22 @@ export class UserProfileComponent implements OnInit {
 
   public showBio() {
     this.bio.nativeElement.classList.add('active');
-    this.bio.nativeElement.classList.add('animate__animated');
+
+    this.bio.nativeElement.classList.remove('animate__slideOutDown');
+
+    this.bio.nativeElement.classList.add(
+      'animate__animated',
+      'animate_slideInUp'
+    );
     this.bio.nativeElement.classList.add('animate__slideInUp');
   }
   public hideBio() {
-    this.bio.nativeElement.classList.remove('active');
-    this.bio.nativeElement.classList.remove('animate__fadeIn');
-    this.bio.nativeElement.classList.add('animate__fadeOut');
+    this.bio.nativeElement.classList.remove('animate_slideInUp');
+
+    this.bio.nativeElement.classList.add(
+      'animate__animated',
+      'animate__slideOutDown'
+    );
   }
   public match() {}
   public nextUser() {}

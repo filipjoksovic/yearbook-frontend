@@ -11,3 +11,8 @@
 :root {
   //   --animate-duration: 0.5s;
 }
+
+* {
+  transition: opacity 250ms ease-in-out, width 250ms ease-in-out,
+    height 250ms ease-in-out, border-radius 250ms ease-in-out;
+}

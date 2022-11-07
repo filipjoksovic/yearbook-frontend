@@ -1,4 +1,4 @@
-<div class="user-profile">
+<div class="user-profile animate__animated animate__fadeInUp">
   <div class="user-profile__image">
     <img src="https://picsum.photos/800" alt="user picture" />
     <div class="user-profile__show-bio" (click)="showBio()">
@@ -29,7 +29,12 @@
     </div>
   </div>
   <div class="user-profile__bio" #bio>
-    <h1 class="user-profile__bio__title" #bioTitle>Title</h1>
+    <div class="user-profile__bio__title" #bioTitle>
+      <span>Title</span>
+      <button class="btn btn__warning" (click)="hideBio()">
+        <fa-icon [icon]="faTimes"></fa-icon>
+      </button>
+    </div>
 
     <div class="user-profile__bio__text">
       <!-- <span>

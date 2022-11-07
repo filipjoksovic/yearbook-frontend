@@ -1,7 +1,9 @@
 <div class="form-wrapper">
   <div class="form-container">
-    <h1 class="form-title">YearBook</h1>
-
+    <div class="text-center text-white">
+      <h1 class="form-title">YearBook</h1>
+      <span class="italic">An app for students, made by students</span>
+    </div>
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" name="username" id="username" class="form-control" />
@@ -17,7 +19,9 @@
     </div>
 
     <div class="form-submit">
-      <button class="btn btn__primary" (click)="login()">Log in</button>
+      <button class="btn btn__primary btn__login" (click)="login()">
+        Log in
+      </button>
     </div>
   </div>
 

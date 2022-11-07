@@ -18,6 +18,17 @@
     filter: brightness(120%);
   }
 
+  &__login {
+    display: block;
+    width: 50%;
+    margin: auto;
+    color: white;
+    transition: 250ms ease-in-out width;
+    &:hover {
+      width: 80%;
+    }
+  }
+
   &__success {
     color: white;
     background-color: $success;

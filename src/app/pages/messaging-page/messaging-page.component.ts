@@ -6,6 +6,7 @@ import { TitleService } from 'src/app/services/title.service';
 import { User } from 'src/app/user';
 import { ChangeDetectionStrategy } from '@angular/core';
 import { ChangeDetectorRef } from '@angular/core';
+import * as moment from 'moment';
 @Component({
   selector: 'app-messaging-page',
   templateUrl: './messaging-page.component.html',
@@ -44,7 +45,7 @@ export class MessagingPageComponent implements OnInit {
     const message: Message = new Message({
       id: this.messages.length + 1,
       text: this.messageInput.nativeElement.value,
-      timestamp: '2020-10-10',
+      timestamp: moment().format('YYYY-MM-DD HH:mm:ss'),
       sender_id: 1,
     });
     console.log(message);
